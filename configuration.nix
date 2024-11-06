@@ -6,6 +6,7 @@
       environment.systemPackages =
         [ 
           pkgs.neovim
+          pkgs.onefetch
           pkgs.tmux
           pkgs.git
           pkgs.gh
@@ -18,10 +19,25 @@
           pkgs.glow
           pkgs.fzf
           pkgs.zoxide
-          pkgs.zsh-syntax-highlighting
-          pkgs.zsh-autosuggestions
           pkgs.yarn
           pkgs.mkalias
+          pkgs.google-chrome
+          pkgs.pass
+          pkgs.yazi
+          pkgs.yabai
+          pkgs.bat
+          pkgs.luajit
+          pkgs.pngpaste
+          pkgs.fd
+          pkgs.ripgrep
+          pkgs.lazygit
+          pkgs.go
+          pkgs.nodejs
+          pkgs.ruby
+          pkgs.luajit
+          pkgs.luajitPackages.magick
+          pkgs.stow
+          pkgs.postgresql_16_jit
         ];
 
       fonts.packages = [
@@ -52,41 +68,37 @@
         enable = true;
         brews = [
           "mas"
+          "zsh-autosuggestions"
+          "zsh-syntax-highlighting"
+
         ];
         casks = [
           "hammerspoon"
           "iina"
-        ];
+          ];
         masApps = {
           # "Yoink" = 457622435; 
         };
+        onActivation.autoUpdate = true;
+        onActivation.upgrade = true;
 
         onActivation.cleanup = "zap";
       };
 
-      
-      # Auto upgrade nix package and the daemon service.
       services.nix-daemon.enable = true;
-      # services.karabiner-elements.enable = true;
-      # nix.package = pkgs.nix;
 
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
 
-      # Enable alternative shell support in nix-darwin.
       programs.zsh.enable = true;
-      # programs.fish.enable = true;
 
-      # Used for backwards compatibility, please read the changelog before changing.
-      # $ darwin-rebuild changelog
       system.stateVersion = 5;
 
-      # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "aarch64-darwin";
 
       users.users."GabrielAraujo" = {
         name = "GabrielAraujo";
-        home = "/Users/GabrielAraujo";
+        home = "/Users/GabrielAraujo/";
       };
     }
 

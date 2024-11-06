@@ -29,6 +29,7 @@
             {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+	    home-manager.backupFileExtension = "bak";
             home-manager.users."GabrielAraujo" = import ./home.nix;
             }
         nix-homebrew.darwinModules.nix-homebrew
